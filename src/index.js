@@ -11,11 +11,9 @@ app.use(cors({}));
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
-app.use('/api',require('./routes/UserRoutes'));
+app.use('/api/user',require('./routes/UserRoutes'));
 
 app.listen(PORT,async()=>{
-    connection.sync({force:false}).then(()=>{
-        console.log('Excelente');
-    })
+    await connection.authenticate();
     console.log(`Server on port ${PORT}`);
 })
