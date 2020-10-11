@@ -5,6 +5,7 @@ let ctrl = {};
 ctrl.all = async (req, res) => {
     try {
         let paciente = await Patient.findAll({
+            
             include: {
                 association: 'nivel',
                 attributes: ['Tipo_Nivel']

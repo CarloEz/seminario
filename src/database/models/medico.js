@@ -13,14 +13,14 @@ module.exports = (sequelize, DataTypes) => {
       allowNull:false,
       type:DataTypes.INTEGER
     },
-    Id_Usuario: DataTypes.INTEGER,
+    Id: DataTypes.INTEGER,
     Nombres_Medico: DataTypes.STRING(50),
     Apellidos_Medico: DataTypes.STRING(50),
     Telefono: DataTypes.STRING(50),
     DPI: DataTypes.STRING(50)
   }, {
     sequelize,
-    tableName:'hsm_medicos',
+    tableName:'Medico',
     timestamps:false,
     modelName: 'medico',
   });

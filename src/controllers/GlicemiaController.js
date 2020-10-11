@@ -5,8 +5,7 @@ let ctrl = {};
 ctrl.all = async (req, res) => {
     try{
         let glicemia = await Glicemia.findAll();
-        console.log(glicemia);
-        res.json({glicemia:glicemia});
+        res.json({data:glicemia});
     }catch{
         res.json('false');
     }
@@ -25,10 +24,10 @@ ctrl.sup = async (req, res) => {
     try{
         const deleted = await Glicemia.destroy({
             where: {
-                id: req.params.id
+                Id_Glicemia: req.params.id
             }
         })
-        if (deleted) { res.json("glicemia eliminado") }
+        if (deleted) { res.json("eliminado") }
     }catch{
         res.json('false');
     }
@@ -49,7 +48,7 @@ ctrl.put = async (req, res) => {
             req.body,
             {
                 where: {
-                    id: req.params.id
+                    Id_Glicemia: req.params.id
                 }
             });
         if (update) { res.json('actualizado') }

@@ -5,9 +5,16 @@ module.exports = (sequelize, DataTypes) => {
     static associate(model){      
       Patient.belongsTo(model.Nivel,{foreignKey:'Id_Nivel_E'});
       Patient.hasMany(model.Control,{foreignKey:'Id_Paciente'});
+      Patient.hasMany(model.Nutricioni,{foreignKey:'Id_Paciente'});
       Patient.hasMany(model.Glicemia,{foreignKey:'Id_Paciente'});
+ 
+      /*
       Patient.hasMany(model.Cd4,{foreignKey:'Id_Paciente'});
       Patient.hasMany(model.Nutricion,{foreignKey:'Id_Paciente'});
+      Patient.hasMany(model.Cd4I,{foreignKey:'Id_Paciente'});
+      Patient.hasMany(model.Enfermedad,{foreignKey:'Id_Paciente'});
+      Patient.hasMany(model.Cvi,{foreignKey:'Id_Paciente'});
+      */
     }
   };
   Patient.init({

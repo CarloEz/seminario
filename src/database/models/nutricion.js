@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
     Observaciones: DataTypes.STRING,
   }, {
     sequelize,
-    tableName:'hsm_estado_nutricional',
+    tableName:'Estado_Nutricional',
     modelName: 'nutricion',
     timestamps:false
   });

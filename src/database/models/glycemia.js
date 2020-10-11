@@ -5,6 +5,7 @@ module.exports = (sequelize, DataTypes) => {
   class Glycemia extends Model {
     static associate(model){
       Glycemia.belongsTo(model.Patient,{foreignKey:'Id_Paciente'});
+      Glycemia.hasMany(model.GlicemiaDet,{foreignKey:'Id_Glicemia'});
     }
   }
   Glycemia.init({
@@ -14,15 +15,11 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement:true
     },
     Id_Paciente: DataTypes.INTEGER,
-    Fecha:DataTypes.DATEONLY,
-    Hora1:DataTypes.TIME,
-    Pre:DataTypes.STRING(50),
-    Hora2:DataTypes.TIME,
-    Pos:DataTypes.STRING(50)    
+    Fecha_Glicemia:DataTypes.DATEONLY
   },
   { 
     sequelize,
-    tableName:'hsm_glicemia',
+    tableName:'Glicemia',
     modelName: 'Glycemia',
     timestamps:false,
   });

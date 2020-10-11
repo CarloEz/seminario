@@ -15,6 +15,10 @@ app.use(express.urlencoded({extended:false}));
 app.use('/api/user',require('./routes/UserRoutes'));
 app.use('/api/nivel',require('./routes/NivelRoutes'));
 app.use('/api/paciente',require('./routes/PatientRoutes'));
+app.use('/api/enfermedad',require('./routes/EnfermedadRoutes'));
+app.use('/api/medico',require('./routes/MedicoRoutes'));
+app.use('/api/glicemia',require('./routes/GlicemiaRoutes'));
+app.use('/api/glicemiadet',require('./routes/GlicemiaDetRoutes'));
 
 app.listen(PORT,async()=>{  
     

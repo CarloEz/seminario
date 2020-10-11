@@ -13,14 +13,14 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement:true
     },
     Id_Paciente:DataTypes.INTEGER,
-    Fecha: DataTypes.DATEONLY,
-    Cantidad: DataTypes.INTEGER,
+    Fecha_CD4CV: DataTypes.DATEONLY,
+    CD4:DataTypes.STRING(50),
+    Carga_Viral:DataTypes.STRING(50),
     Esquema: DataTypes.STRING(50),
-    Observaciones: DataTypes.STRING,
-    Diferenciador: DataTypes.BOOLEAN
+    Observaciones: DataTypes.STRING
   }, {
     sequelize,
-    tableName:'hsm_cd4_cv',
+    tableName:'CD4_CV',
     modelName: 'cd4',
     timestamps:false
   });

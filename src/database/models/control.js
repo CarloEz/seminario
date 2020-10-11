@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     timestamps:false,
-    tableName:'hsm_control',
+    tableName:'Control',
     modelName: 'control',
   });
   return control;
