@@ -43,7 +43,7 @@ ctrl.save = async (req, res) => {
         })
         res.json('Ingresado');
     } catch {
-        res.json('No se pudo guardar el usuario');
+        res.json('false');
     }
 }
 
@@ -59,7 +59,7 @@ ctrl.put = async (req, res) => {
             });
         if (update) { res.json('Usuario actualizado') }
     } catch(error) {
-        res.json({res:error});
+        res.json('false');
     }
 }
 

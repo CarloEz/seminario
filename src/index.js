@@ -14,6 +14,9 @@ app.use(express.urlencoded({extended:false}));
 app.use('/api/user',require('./routes/UserRoutes'));
 
 app.listen(PORT,async()=>{
-    await connection.authenticate();
+    
+    connection.authenticate().then(()=>{
+        console.log('Nitido');
+    })
     console.log(`Server on port ${PORT}`);
 })

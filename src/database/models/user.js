@@ -2,16 +2,22 @@
 const {  Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-  class User extends Model {}
+  class User extends Model {
+    
+  }
   User.init({
-    correo: DataTypes.STRING(60),
-    contrasenia: DataTypes.STRING(60),
-    logueo:DataTypes.BOOLEAN
+    Id_:{
+      primaryKey:true,
+      type:DataTypes.INTEGER,
+      autoIncrement:true
+    },
+    user: DataTypes.STRING(60),
+    contrasenia: DataTypes.STRING(60)
   },
   { 
     sequelize,
     tableName:'hsm_login',
-    modelName: 'hsm_login',
+    modelName: 'User',
     timestamps:false,
   });
   return User;
