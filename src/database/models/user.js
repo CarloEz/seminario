@@ -6,17 +6,18 @@ module.exports = (sequelize, DataTypes) => {
     
   }
   User.init({
-    Id_:{
+    id:{
       primaryKey:true,
       type:DataTypes.INTEGER,
       autoIncrement:true
     },
-    user: DataTypes.STRING(60),
-    contrasenia: DataTypes.STRING(60)
+    usuario: DataTypes.STRING,
+    correo:DataTypes.STRING,
+    password: DataTypes.STRING
   },
   { 
     sequelize,
-    tableName:'hsm_login',
+    tableName:'users',
     modelName: 'User',
     timestamps:false,
   });

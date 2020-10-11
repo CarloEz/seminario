@@ -12,11 +12,11 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.INTEGER,
       autoIncrement:true
     },
-    Tipo_Nivel: DataTypes.STRING
+    Tipo_Nivel: DataTypes.STRING(50)
   }, {
     sequelize,
     timestamps: false,
-    tableName: 'hsm_nivel_educacion',
+    tableName: 'Nivel_Educacion',
     modelName: 'nivel',
   });
   return nivel;

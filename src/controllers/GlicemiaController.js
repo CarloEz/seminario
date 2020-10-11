@@ -1,12 +1,12 @@
-const { hashSync } = require('bcryptjs');
-const { User } = require('../database/db');
+const { Glicemia } = require("../database/db");
+
 let ctrl = {};
 
 ctrl.all = async (req, res) => {
     try{
-        let users = await User.findAll();
-        console.log(users);
-        res.json({data:users});
+        let glicemia = await Glicemia.findAll();
+        console.log(glicemia);
+        res.json({glicemia:glicemia});
     }catch{
         res.json('false');
     }
@@ -14,8 +14,8 @@ ctrl.all = async (req, res) => {
 
 ctrl.id = async (req, res) => {
     try{
-        const user = await User.findByPk(req.params.id);
-        res.json(user);
+        const glicemia = await Glicemia.findByPk(req.params.id);
+        res.json(glicemia);
     }catch{
         res.json('false');
     }
@@ -23,12 +23,12 @@ ctrl.id = async (req, res) => {
 
 ctrl.sup = async (req, res) => {
     try{
-        const deleted = await User.destroy({
+        const deleted = await Glicemia.destroy({
             where: {
                 id: req.params.id
             }
         })
-        if (deleted) { res.json("Usuario eliminado") }
+        if (deleted) { res.json("glicemia eliminado") }
     }catch{
         res.json('false');
     }
@@ -36,11 +36,7 @@ ctrl.sup = async (req, res) => {
 
 ctrl.save = async (req, res) => {
     try {
-        const user = await User.create({
-            usuario: req.body.usuario,
-            correo:req.body.correo,
-            password: hashSync(req.body.contrasenia,8)
-        })
+        const glicemia = await Glicemia.create(req.body);
         res.json('Ingresado');
     } catch {
         res.json('false');
@@ -48,9 +44,8 @@ ctrl.save = async (req, res) => {
 }
 
 ctrl.put = async (req, res) => {
-    try {
-        if(req.body.password){req.body.password=hashSync(req.body.password)}
-        const update = await User.update(
+    try {        
+        const update = await Glicemia.update(
             req.body,
             {
                 where: {

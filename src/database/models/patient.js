@@ -28,9 +28,13 @@ module.exports = (sequelize, DataTypes) => {
     Ocupacion: DataTypes.STRING(50),
     Sabe_Leer: DataTypes.BOOLEAN,
     Id_Nivel_E: DataTypes.INTEGER,
+    Fecha_Prueba:DataTypes.DATEONLY,
+    Registro_hospitalario:DataTypes.STRING(50),
+    Toma_ARV:DataTypes.STRING(30),
+    Fecha_InicioARV:DataTypes.DATEONLY
   }, {
     sequelize,
-    tableName:'hsm_pacientes',
+    tableName:'Paciente',
     modelName: 'Patient',
     timestamps:false
   });
