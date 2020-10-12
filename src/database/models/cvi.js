@@ -13,8 +13,8 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement:true
     },
     Id_Paciente:DataTypes.INTEGER,
-    Cantidad_CVI:DataTypes.INTEGER,
-    Fecha_CVI: DataTypes.DATEONLY
+    Fecha_CVI: DataTypes.DATEONLY,
+    Cantidad_CVI:DataTypes.INTEGER
   }, {
     sequelize,
     tableName:'CV_I',

@@ -15,7 +15,8 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement:true
     },
     Id_Medico: DataTypes.INTEGER,
-    Id_Paciente: DataTypes.INTEGER
+    Id_Paciente: DataTypes.INTEGER,
+    Fecha_ingreso:DataTypes.DATEONLY
   }, {
     sequelize,
     timestamps:false,

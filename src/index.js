@@ -19,6 +19,12 @@ app.use('/api/enfermedad',require('./routes/EnfermedadRoutes'));
 app.use('/api/medico',require('./routes/MedicoRoutes'));
 app.use('/api/glicemia',require('./routes/GlicemiaRoutes'));
 app.use('/api/glicemiadet',require('./routes/GlicemiaDetRoutes'));
+app.use('/api/nutricion',require('./routes/NutricionRoutes'));
+app.use('/api/nutricioni',require('./routes/NutriocioniRoutes'));
+app.use('/api/cvi',require('./routes/CviRoutes'));
+app.use('/api/cd4',require('./routes/Cd4Routes'));
+app.use('/api/cd4i',require('./routes/Cd4_iRoutes'));
+app.use('/api/control',require('./routes/ControlRoutes'));
 
 app.listen(PORT,async()=>{  
     

@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
     Id_Paciente: DataTypes.INTEGER,
     Estado_Nutricional: DataTypes.STRING(60),
     Mes: DataTypes.STRING(30),
-    anio: DataTypes.STRING(30)
+    Anio: DataTypes.STRING(30)
   }, {
     sequelize,
     tableName:'Estado_Nutricional_I',
