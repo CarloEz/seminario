@@ -13,7 +13,6 @@ app.use(express.urlencoded({extended:false}));
 
 //routes
 app.use('/api/user',require('./routes/UserRoutes'));
-app.use('/api/nivel',require('./routes/NivelRoutes'));
 app.use('/api/paciente',require('./routes/PatientRoutes'));
 app.use('/api/enfermedad',require('./routes/EnfermedadRoutes'));
 app.use('/api/medico',require('./routes/MedicoRoutes'));

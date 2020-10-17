@@ -3,7 +3,6 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Patient extends Model {
     static associate(model){      
-      Patient.belongsTo(model.Nivel,{foreignKey:'Id_Nivel_E'});
       Patient.hasMany(model.Control,{foreignKey:'Id_Paciente'});
       Patient.hasMany(model.Nutricioni,{foreignKey:'Id_Paciente'});
       Patient.hasMany(model.Glicemia,{foreignKey:'Id_Paciente'});
@@ -31,9 +30,9 @@ module.exports = (sequelize, DataTypes) => {
     Genero: DataTypes.STRING(25),
     Ocupacion: DataTypes.STRING(50),
     Sabe_Leer: DataTypes.BOOLEAN,
-    Id_Nivel_E: DataTypes.INTEGER,
+    Id_Nivel_E: DataTypes.STRING(50),
     Fecha_Prueba:DataTypes.DATEONLY,
-    Registro_hospitalario:DataTypes.STRING(50),
+    Registro_hospitalario:DataTypes.STRING,
     Toma_ARV:DataTypes.STRING(30),
     Fecha_InicioARV:DataTypes.DATEONLY
   }, {

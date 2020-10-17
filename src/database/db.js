@@ -11,7 +11,6 @@ db.connection=new Sequelize(process.env.db_name, process.env.db_user, process.en
 
 //Models
 db.User=require('./models/user')(db.connection,DataTypes);
-db.Nivel= require('./models/nivel')(db.connection,DataTypes);
 db.Patient=require('./models/patient')(db.connection,DataTypes);
 db.Medico=require('./models/medico')(db.connection,DataTypes);
 db.Control=require('./models/control')(db.connection,DataTypes); //Falta
@@ -28,7 +27,6 @@ db.Cd4I= require('./models/cd4I')(db.connection,DataTypes);
 db.Medico.associate(db);
 db.Patient.associate(db);
 db.Nutricioni.associate(db);
-db.Nivel.associate(db);
 db.Control.associate(db);
 db.Glicemia.associate(db);
 db.GlicemiaDet.associate(db);
