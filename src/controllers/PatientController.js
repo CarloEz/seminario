@@ -4,13 +4,7 @@ let ctrl = {};
 
 ctrl.all = async (req, res) => {
     try {
-        let paciente = await Patient.findAll({
-            
-            include: {
-                association: 'nivel',
-                attributes: ['Tipo_Nivel']
-            }
-        });
+        let paciente = await Patient.findAll();
         res.json({ data: paciente });
     } catch {
         res.json('false');
@@ -19,12 +13,7 @@ ctrl.all = async (req, res) => {
 
 ctrl.id = async (req, res) => {
     try {
-        const paciente = await Patient.findByPk(req.params.id, {
-            include: {
-                association: 'nivel',
-                attributes: ['Tipo_Nivel']
-            }
-        });
+        const paciente = await Patient.findByPk(req.params.id);
         res.json(paciente);
     } catch {
         res.json('false');
