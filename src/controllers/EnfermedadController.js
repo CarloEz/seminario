@@ -11,6 +11,16 @@ ctrl.all = async (req, res) => {
     }
 }
 
+
+ctrl.paciente = async (req, res) => {
+    try{
+        const enfermedad = await Enfermedad.findAll({where:{Id_Paciente:req.params.id}});
+        res.json(enfermedad);
+    }catch{
+        res.json('false');
+    }
+}
+
 ctrl.id = async (req, res) => {
     try{
         const enfermedad = await Enfermedad.findByPk(req.params.id);

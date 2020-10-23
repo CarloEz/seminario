@@ -5,6 +5,8 @@ router.get('/',controller.all);
 
 router.get('/:id',controller.id);
 
+router.get('/paciente/:id',controller.paciente);
+
 router.post('/',controller.save);
 
 router.put('/:id',controller.put);
