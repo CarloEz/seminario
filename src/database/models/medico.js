@@ -2,8 +2,8 @@
 const {Model} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class medico extends Model {
-    static associate(models) {
-      medico.hasMany(models.Control,{foreignKey:'Id_Medico'});
+    static associate(model){
+      medico.hasMany(model.Control,{foreignKey:'Id_Medico'});
     }
   };
   medico.init({
@@ -13,9 +13,8 @@ module.exports = (sequelize, DataTypes) => {
       allowNull:false,
       type:DataTypes.INTEGER
     },
-    Id: DataTypes.INTEGER,
-    Nombres_Medico: DataTypes.STRING(50),
-    Apellidos_Medico: DataTypes.STRING(50),
+    Nombres_Medico: DataTypes.STRING,
+    Apellidos_Medico:DataTypes.STRING,
     Telefono: DataTypes.STRING(50),
     DPI: DataTypes.STRING(50)
   }, {

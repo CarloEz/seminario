@@ -23,7 +23,9 @@ db.Cvi= require('./models/cvi')(db.connection,DataTypes);
 db.Cd4= require('./models/cd4')(db.connection,DataTypes);
 db.Cd4I= require('./models/cd4I')(db.connection,DataTypes);
 
+
 //Asociar modelos
+db.User.associate(db);
 db.Medico.associate(db);
 db.Patient.associate(db);
 db.Nutricioni.associate(db);

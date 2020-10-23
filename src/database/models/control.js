@@ -3,9 +3,10 @@ const {  Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
   class control extends Model { 
-    static associate(models) {
-      control.belongsTo(models.Medico,{foreignKey:'Id_Medico'});
-      control.belongsTo(models.Patient,{foreignKey:'Id_Paciente'});
+    static associate(model) {
+      control.belongsTo(model.User,{foreignKey:'Id'});
+      control.belongsTo(model.Medico,{foreignKey:'Id_Medico'});
+      control.belongsTo(model.Patient,{foreignKey:'Id_Paciente'});
     }
   };
   control.init({
@@ -14,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.INTEGER,
       autoIncrement:true
     },
+    Id:DataTypes.INTEGER,
     Id_Medico: DataTypes.INTEGER,
     Id_Paciente: DataTypes.INTEGER,
     Fecha_ingreso:DataTypes.DATEONLY
