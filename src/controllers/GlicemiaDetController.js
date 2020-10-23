@@ -13,7 +13,7 @@ ctrl.all = async (req, res) => {
 
 ctrl.id = async (req, res) => {
     try{
-        const glicemiadet = await GlicemiaDet.findByPk(req.params.id);
+        const glicemiadet = await GlicemiaDet.findAll({where:{Id_Glicemia:req.params.id}});
         res.json(glicemiadet);
     }catch{
         res.json('false');

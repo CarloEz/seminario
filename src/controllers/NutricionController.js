@@ -13,7 +13,7 @@ ctrl.all = async (req, res) => {
 
 ctrl.id = async (req, res) => {
     try{
-        const nutricion = await Nutricion.findByPk(req.params.id);
+        const nutricion = await Nutricion.findAll({where:{Id_Paciente:req.params.id}});
         res.json(nutricion);
     }catch{
         res.json('false');
