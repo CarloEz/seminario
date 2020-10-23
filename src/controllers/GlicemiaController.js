@@ -20,6 +20,17 @@ ctrl.id = async (req, res) => {
     }
 }
 
+
+ctrl.registro = async (req, res) => {
+    try{
+        const glicemia = await Glicemia.findByPk(req.params.id);
+        res.json(glicemia);
+    }catch{
+        res.json('false');
+    }
+}
+
+
 ctrl.sup = async (req, res) => {
     try{
         const deleted = await Glicemia.destroy({

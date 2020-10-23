@@ -20,6 +20,17 @@ ctrl.id = async (req, res) => {
     }
 }
 
+
+ctrl.registro = async (req, res) => {
+    try{
+        const nutricion = await Nutricion.findByPk(req.params.id);
+        res.json(nutricion);
+    }catch{
+        res.json('false');
+    }
+}
+
+
 ctrl.sup = async (req, res) => {
     try{
         const deleted = await Nutricion.destroy({

@@ -19,6 +19,15 @@ ctrl.id = async (req, res) => {
     }
 }
 
+ctrl.registro = async (req, res) => {
+    try{
+        const cd4 = await Cd4.findByPk(req.params.id);
+        res.json(cd4);
+    }catch{
+        res.json('false');
+    }
+}
+
 ctrl.sup = async (req, res) => {
     try{
         const deleted = await Cd4.destroy({
