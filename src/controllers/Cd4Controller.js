@@ -1,5 +1,4 @@
 const { Cd4 } = require("../database/db");
-
 let ctrl = {};
 
 ctrl.all = async (req, res) => {
@@ -13,7 +12,7 @@ ctrl.all = async (req, res) => {
 
 ctrl.id = async (req, res) => {
     try{
-        const cd4 = await Cd4.findByPk(req.params.id);
+        const cd4 = await Cd4.findAll({where:{Id_Paciente:req.params.id}})
         res.json(cd4);
     }catch{
         res.json('false');
