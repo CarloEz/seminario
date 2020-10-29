@@ -24,6 +24,7 @@ app.use('/api/cvi',require('./routes/CviRoutes'));
 app.use('/api/cd4',require('./routes/Cd4Routes'));
 app.use('/api/cd4i',require('./routes/Cd4_iRoutes'));
 app.use('/api/control',require('./routes/ControlRoutes'));
+app.use('/api/peso/',require('./routes/PesoRoutes'));
 
 app.listen(PORT,async()=>{  
     

@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       Patient.hasMany(model.Cvi,{foreignKey:'Id_Paciente'});
       Patient.hasMany(model.Cd4,{foreignKey:'Id_Paciente'});
       Patient.hasMany(model.Cd4I,{foreignKey:'Id_Paciente'});
+      Patient.hasMany(model.Peso,{foreignKey:'Id_Paciente'});
     }
   };
   Patient.init({

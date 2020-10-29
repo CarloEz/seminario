@@ -22,7 +22,7 @@ db.Nutricion= require('./models/nutricion')(db.connection,DataTypes);
 db.Cvi= require('./models/cvi')(db.connection,DataTypes);
 db.Cd4= require('./models/cd4')(db.connection,DataTypes);
 db.Cd4I= require('./models/cd4I')(db.connection,DataTypes);
-
+db.Peso=require('./models/peso')(db.connection,DataTypes);
 
 //Asociar modelos
 db.User.associate(db);
@@ -37,5 +37,6 @@ db.Nutricion.associate(db);
 db.Cvi.associate(db);
 db.Cd4.associate(db);
 db.Cd4I.associate(db);
+db.Peso.associate(db);
 
 module.exports=db;
