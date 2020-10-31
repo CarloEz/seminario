@@ -1,4 +1,5 @@
-const { Control } = require("../database/db");
+const { Control,Medico } = require("../database/db");
+
 
 let ctrl = {};
 
@@ -12,10 +13,19 @@ ctrl.all = async (req, res) => {
 }
 
 ctrl.id = async (req, res) => {
-    try {
+    try{
+        const control = await Control.findAll({include:[{model:Medico}], where:{Id_Paciente:req.params.id}});
+        res.json(control);
+    }catch{
+        res.json('false');
+    }
+}
+
+ctrl.registro = async (req, res) => {
+    try{
         const control = await Control.findByPk(req.params.id);
         res.json(control);
-    } catch {
+    }catch{
         res.json('false');
     }
 }
@@ -51,7 +61,10 @@ ctrl.put = async (req, res) => {
                     Id_Control: req.params.id
                 }
             });
-        if (update) { res.json('actualizado') }
+
+        if (update[0])
+        { res.json('actualizado') } 
+        else{ res.json('false')} 
     } catch (error) {
         res.json('false');
     }
