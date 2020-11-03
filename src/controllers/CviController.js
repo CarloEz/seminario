@@ -13,12 +13,23 @@ ctrl.all = async (req, res) => {
 
 ctrl.id = async (req, res) => {
     try{
+        const cvi = await Cvi.findAll({where:{Id_Paciente:req.params.id}});
+        res.json(cvi);
+    }catch{
+        res.json('false');
+    }
+}
+
+
+ctrl.registro = async (req, res) => {
+    try{
         const cvi = await Cvi.findByPk(req.params.id);
         res.json(cvi);
     }catch{
         res.json('false');
     }
 }
+
 
 ctrl.sup = async (req, res) => {
     try{
@@ -51,7 +62,11 @@ ctrl.put = async (req, res) => {
                     Id_CV_I: req.params.id
                 }
             });
-        if (update) { res.json('actualizado') }
+        if (update[0]) { 
+            res.json('actualizado');
+        }else {
+            res.json('false');
+        }
     } catch(error) {
         res.json('false');
     }

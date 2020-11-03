@@ -62,7 +62,8 @@ ctrl.put = async (req, res) => {
                     Id_Glicemia: req.params.id
                 }
             });
-        if (update) { res.json('actualizado') }
+        if (update[0]) { res.json('actualizado') }
+        else {res.json('false')}
     } catch(error) {
         res.json('false');
     }
